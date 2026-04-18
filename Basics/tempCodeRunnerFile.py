@@ -1,1 +1,1 @@
-def
+print(sabziList2)

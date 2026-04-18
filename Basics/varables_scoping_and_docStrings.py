@@ -39,13 +39,17 @@ def factorial(n):
     
     return n * factorial(n - 1)
 
+# print(factorial(5))
+
+
 # recursive function of sum of n numbers ...
 def sum_of_n_numbers(n):
-    if( n == 0 or n==1 ):
-        return 1
-    
-    return n + factorial(n - 1)
+    sum = 0;
+    for i in n:
+        sum +=int(i)
+
+    return sum;
 
 
-print(factorial(5))
+print(sum_of_n_numbers("154"))
 
