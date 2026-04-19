@@ -1,0 +1,107 @@
+Hashable ka matlab kya hai ?
+
+“hashable” ka matlab hota hai — jis object ka ek fixed hash value ho, jo kabhi change na ho.
+
+🔹 Kaun hashable hai?
+
+✔ Immutable types:
+
+int
+float
+str
+tuple (agar andar sab hashable ho)
+
+
+🔴 Kaun hashable nahi hai?
+
+❌ Mutable types:
+
+list
+dict
+set
+
+🔥 Real use kaha hota hai?
+
+Hashable objects use hote hain:
+
+dictionary keys
+set elements
+
+
+“Only immutable objects are hashable, and only hashable objects can be used as dictionary keys.”
+
+Iska Mtlb mai list ko kbhi as a key use nii kr skta dictionary me , so mai kya use krunga as a key dictionary me which is int,float,strings and tuple , beacause they are immutable and inki hashing fixed hoti hai.
+
+
+
+*********************************************************************************************
+
+
+
+Abhi bhi Samgh nii aya :-
+
+🔹 Step 1: Hashable ka matlab (easy language)
+
+Hashable = jis cheez ka “ID number” fix hota hai
+
+Socho har object ka ek unique number ban raha hai (like Aadhaar 😄)
+
+print(hash("shubham"))
+
+👉 ye ek number dega
+👉 aur ye number same hi rahega (jab tak value same hai)
+
+🔹 Step 2: Problem kaha aati hai?
+
+Ab socho:
+
+a = [1,2,3]
+
+Agar Python iska hash banaye…
+
+👉 phir tum list change kar do:
+
+a.append(4)
+
+👉 ab list badal gayi
+👉 to iska hash bhi change ho jana chahiye
+
+❌ Problem: system confuse ho jayega
+
+🔴 Isliye rule bana:
+
+👉 Jo change ho sakta hai = NOT hashable
+👉 Jo change nahi hota = hashable
+
+🔹 Step 3: Simple examples
+
+✔ Hashable:
+
+hash(10) # 10 is int
+hash("hi") # hi is string
+hash((1,2)) # (1,2) is tuple
+
+❌ Not hashable:
+
+hash([1,2])   # list ❌
+hash({1:2})   # dict ❌
+
+
+🔥 Step 4: Real use (sabse important)
+
+Dictionary ke andar:
+
+data = {
+    "name": "shubham"
+}
+
+👉 "name" ek key hai
+👉 Python us key ka hash banata hai taaki fast search ho
+
+🧠 Ek line me samajh
+
+Hashable = jo change nahi hota (immutable), isliye uska fixed hash ban sakta hai
+
+🔥 Final clear kar deta hoon (tumhari confusion)
+❌ dict khud hashable nahi hai
+✔ dict ke keys hashable hone chahiye

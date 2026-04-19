@@ -1,0 +1,68 @@
+Python me sirf 3 main comprehensions hote hain — aur ye yaad rakh, extra kuch nahi hai:
+
+🔥 1. List Comprehension
+[x for x in iterable if condition]
+
+👉 Output: list
+
+Example:
+
+nums = [1,2,3,4]
+
+squares = [x*x for x in nums]
+# [1,4,9,16]
+
+************************************************************
+
+🔥 2. Dictionary Comprehension
+{key: value for item in iterable if condition}
+
+👉 Output: dict
+
+Example:
+
+nums = [1,2,3]
+
+d = {x: x*x for x in nums}
+# {1:1, 2:4, 3:9}
+
+************************************************
+
+🔥 3. Set Comprehension
+{x for x in iterable if condition}
+
+👉 Output: set (unique values)
+
+Example:
+
+nums = [1,2,2,3]
+
+s = {x for x in nums}
+# {1,2,3}
+
+
+🔴 Ek cheez jo log confuse karte hain
+❌ “Tuple comprehension” naam ki koi cheez nahi hoti
+(x for x in nums)
+
+👉 Ye tuple nahi hai
+👉 Ye generator expression hai
+
+🔥 Bonus (important for interviews)
+
+
+
+4. Generator Expression
+(x for x in iterable)
+
+👉 Output: generator (lazy evaluation)
+👉 Memory efficient
+
+Example:
+
+gen = (x*x for x in range(5))
+🧠 Final summary (ek line me)
+[] → list comprehension
+{} with : → dict comprehension
+{} without : → set comprehension
+() → generator (NOT tuple)
