@@ -1,1 +1,1 @@
-print(firstBus.color)
+print(type("Shubham"))
